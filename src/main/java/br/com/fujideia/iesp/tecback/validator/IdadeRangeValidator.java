@@ -4,6 +4,9 @@ package br.com.fujideia.iesp.tecback.validator;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class IdadeRangeValidator implements ConstraintValidator<IdadeRange, Integer> {
     private int min;
     private int max;

@@ -15,7 +15,6 @@ public class Usuario {
     @Id
     @GeneratedValue
     private Integer id;
-
     @NotEmpty
     private String nome;
     private String email;

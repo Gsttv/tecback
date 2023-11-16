@@ -16,6 +16,8 @@ public class UsuarioController {
 
     @Autowired
     private UsuarioService service;
+    @Autowired
+    ViaCepClient client;
 
     @PostMapping
     public ResponseEntity<Usuario> salvar(@RequestBody Usuario usuario){
@@ -31,6 +33,11 @@ public class UsuarioController {
     @GetMapping("/{id}")
     public ResponseEntity<Usuario> consultarPorId(@PathVariable int id){
         return ResponseEntity.ok(service.consultarPorId(id));
+    }
+
+    @GetMapping("/{cep}")
+    public ResponseEntity<String> consultarCep(@PathVariable String cep){
+        return ResponseEntity.ok(client.consultaCEP(cep));
     }
 
 

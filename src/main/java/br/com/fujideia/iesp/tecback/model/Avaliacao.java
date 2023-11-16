@@ -1,18 +1,15 @@
 package br.com.fujideia.iesp.tecback.model;
 
-
+import br.com.fujideia.iesp.tecback.validator.NotaValida;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import lombok.Data;
 
-
 @Data
 @Entity
-public class Genero  {
-    private String nome;
+public class Avaliacao {
+    @NotaValida
+    private Integer nota;
     @Id
-    @GeneratedValue
     private Long id;
-
 }
