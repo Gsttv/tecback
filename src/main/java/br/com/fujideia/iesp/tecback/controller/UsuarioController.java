@@ -35,7 +35,7 @@ public class UsuarioController {
         return ResponseEntity.ok(service.consultarPorId(id));
     }
 
-    @GetMapping("/{cep}")
+    @GetMapping("consulta/cep/{cep}")
     public ResponseEntity<String> consultarCep(@PathVariable String cep){
         return ResponseEntity.ok(client.consultaCEP(cep));
     }
