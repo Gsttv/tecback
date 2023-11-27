@@ -11,7 +11,7 @@ public class NotaValidaValidator implements ConstraintValidator<NotaValida,Integ
     @Override
     public boolean isValid(Integer value, ConstraintValidatorContext constraintValidatorContext) {
         if (value == null){
-            return true;
+            return false;
         }
         return value >= 0 && value <=5;
     }

@@ -17,6 +17,8 @@ public class FilmeController {
 
     @Autowired
     private FilmeService service;
+    @Autowired
+    OMDClient client;
 
     @PostMapping
     public ResponseEntity<Filme> salvar(@RequestBody Filme filme){
@@ -57,6 +59,11 @@ public class FilmeController {
     @GetMapping("/filme/nome/genero")
     public ResponseEntity<List<FilmeListaDTO>> listarFilmeNomeGenero(){
         return ResponseEntity.ok(service.listaFilmeNomeGenero());
+    }
+
+    @GetMapping("consulta/filme/{movieTitle}")
+    public String consultarFilme(@PathVariable String movieTitle){
+        return client.consultaFilme(movieTitle);
     }
 
 }

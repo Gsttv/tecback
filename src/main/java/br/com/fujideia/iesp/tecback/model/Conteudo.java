@@ -17,6 +17,5 @@ public abstract class Conteudo implements Serializable {
     @ManyToOne
     private Genero genero;
     @OneToOne
-    @JoinColumn(name = "avaliacao_id") // O nome da coluna de chave estrangeira na tabela 'Conteudo'
     private Avaliacao avaliacao;
 }
